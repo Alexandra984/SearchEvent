@@ -141,5 +141,22 @@ app.post('/isLoggedIn', (req, res) => {
     }
 })
     
-    app.listen(3001);
+app.get('/events', (req, res) => {
+        let cols = [req.session.userID];
+        db.query('SELECT * FROM events', cols, (err, data, fields) => {
+            if (data) {
+                res.json({
+                    success: true,
+                    events: data
+                })
+                return true;
+            } else {
+                res.json({
+                    success: false
+                })
+            }
+        })
+})
+
+app.listen(3001);
     
