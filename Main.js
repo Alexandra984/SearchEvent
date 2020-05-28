@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const Router = require('./Router');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
