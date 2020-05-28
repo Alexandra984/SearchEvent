@@ -15,7 +15,8 @@ console.log('Testing server')
 
 // create the database connection
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'mdsproject.ddns.net',
+    port: '4444',
     user: 'alexandra',
     password: 'alexandra',
     database: 'myapp'
